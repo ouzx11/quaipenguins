@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quai Penguins</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ust-panel">
+        <div class="logo">Quai Penguins</div>
+        <div class="puan-gosterge">Quai: <span id="puan">0</span></div>
+        <div class="butonlar">
+            <button id="marketAc">Market</button>
+        </div>
+    </div>
+
+    <div class="oyun-cerceve">
+        <div class="resim-container">
+            <img id="tiklamaResim" src="images/resim.png" alt="Tıklama Resmi">
+        </div>
+    </div>
+
+    <div class="discord-link">
+        Discord: o.uz
+    </div>
+
+    <!-- Market Modal -->
+    <div id="marketModal" class="modal">
+        <div class="modal-icerik">
+            <div class="market-tabs">
+                <button class="tab-button active" data-tab="guclendiriciler">Power-ups</button>
+                <button class="tab-button" data-tab="karakterler">Characters</button>
+                <button class="tab-button" data-tab="arkaPlanlar">Backgrounds</button>
+            </div>
+
+            <!-- Güçlendiriciler Tab -->
+            <div class="tab-content active" id="guclendiriciler">
+                <h2>Power-ups</h2>
+                <div class="market-item">
+                    <h3>Double Click</h3>
+                    <p>Earn 2 quai per click</p>
+                    <p>Price: 100 quai</p>
+                    <button class="satin-al" data-item="ciftTiklama" data-fiyat="100">Buy</button>
+                </div>
+                <div class="market-item">
+                    <h3>Golden Click</h3>
+                    <p>20% chance to earn 5 quai</p>
+                    <p>Price: 250 quai</p>
+                    <button class="satin-al" data-item="altinTiklama" data-fiyat="250">Buy</button>
+                </div>
+                <div class="market-item">
+                    <h3>Auto Clicker</h3>
+                    <p>Earn 1 quai every 3 seconds</p>
+                    <p>Price: 500 quai</p>
+                    <button class="satin-al" data-item="otoTiklayici" data-fiyat="500">Buy</button>
+                </div>
+                <div class="market-item">
+                    <h3>Super Click</h3>
+                    <p>Earn 3 quai per click</p>
+                    <p>Price: 750 quai</p>
+                    <button class="satin-al" data-item="superTiklama" data-fiyat="750">Buy</button>
+                </div>
+                <div class="market-item">
+                    <h3>Fast Auto Clicker</h3>
+                    <p>Earn 1 quai every second</p>
+                    <p>Price: 1000 quai</p>
+                    <button class="satin-al" data-item="hizliOtoTiklayici" data-fiyat="1000">Buy</button>
+                </div>
+                <div class="market-item">
+                    <h3>Mega Luck</h3>
+                    <p>10% chance to earn 10 quai</p>
+                    <p>Price: 1500 quai</p>
+                    <button class="satin-al" data-item="megaSans" data-fiyat="1500">Buy</button>
+                </div>
+                <div class="market-item">
+                    <h3>Critical Hit</h3>
+                    <p>5% chance to earn 20 quai</p>
+                    <p>Price: 2000 quai</p>
+                    <button class="satin-al" data-item="kritikVurus" data-fiyat="2000">Buy</button>
+                </div>
+                <div class="market-item">
+                    <h3>Ultra Auto Clicker</h3>
+                    <p>Earn 2 quai every 2 seconds</p>
+                    <p>Price: 2500 quai</p>
+                    <button class="satin-al" data-item="ultraOtoTiklayici" data-fiyat="2500">Buy</button>
+                </div>
+            </div>
+
+            <!-- Karakterler Tab -->
+            <div class="tab-content" id="karakterler">
+                <h2>Characters</h2>
+                <div class="market-item">
+                    <h3>Ice</h3>
+                    <img src="images/ice.png" alt="Ice">
+                    <p class="yetenek-aciklama"><strong>Frozen Time:</strong> Power-ups never disappear</p>
+                    <p>Price: 1000 quai</p>
+                    <button class="satin-al" data-item="ice" data-fiyat="1000" data-type="karakter">Buy</button>
+                </div>
+                <div class="market-item">
+                    <h3>Habibi</h3>
+                    <img src="images/habibi.png" alt="Habibi">
+                    <p class="yetenek-aciklama"><strong>Desert Storm:</strong> All earnings are permanently doubled</p>
+                    <p>Price: 2000 quai</p>
+                    <button class="satin-al" data-item="habibi" data-fiyat="2000" data-type="karakter">Buy</button>
+                </div>
+                <div class="market-item">
+                    <h3>Angel</h3>
+                    <img src="images/angel.png" alt="Angel">
+                    <p class="yetenek-aciklama"><strong>Divine Protection:</strong> Immune to bombs and gains 500 Quai when collecting them</p>
+                    <p>Price: 3000 quai</p>
+                    <button class="satin-al" data-item="angel" data-fiyat="3000" data-type="karakter">Buy</button>
+                </div>
+            </div>
+
+            <!-- Arka Planlar Tab -->
+            <div class="tab-content" id="arkaPlanlar">
+                <h2>Backgrounds</h2>
+                <div class="market-item">
+                    <h3>Pole</h3>
+                    <img src="images/bg-pole.png" alt="Pole">
+                    <p>Price: 500 quai</p>
+                    <button class="satin-al" data-item="pole" data-fiyat="500" data-type="arkaPlan">Buy</button>
+                </div>
+                <div class="market-item">
+                    <h3>Desert</h3>
+                    <img src="images/bg-desert.png" alt="Desert">
+                    <p>Price: 500 quai</p>
+                    <button class="satin-al" data-item="desert" data-fiyat="500" data-type="arkaPlan">Buy</button>
+                </div>
+                <div class="market-item">
+                    <h3>Heaven</h3>
+                    <img src="images/bg-heaven.png" alt="Heaven">
+                    <p>Price: 500 quai</p>
+                    <button class="satin-al" data-item="heaven" data-fiyat="500" data-type="arkaPlan">Buy</button>
+                </div>
+            </div>
+
+            <button id="marketKapat">Close</button>
+        </div>
+    </div>
+
+    <!-- Başlangıç Modal -->
+    <div id="startModal" class="modal" style="display: block;">
+        <div class="modal-icerik start-modal">
+            <h1>Welcome to Quai Penguins!</h1>
+            <div class="tutorial-content">
+                <h2>How to Play</h2>
+                <div class="tutorial-item">
+                    <h3>Basic Clicking</h3>
+                    <p>Click the penguin to earn Quai coins!</p>
+                </div>
+                <div class="tutorial-item">
+                    <h3>Power-ups</h3>
+                    <ul>
+                        <li><span class="power-tag" style="background: #e74c3c">2x Power</span> - Double points for 10 seconds</li>
+                        <li><span class="power-tag" style="background: #9b59b6">3x Power</span> - Triple points for 5 seconds</li>
+                        <li><span class="power-tag" style="background: #f1c40f">+100 Quai</span> - Instant Quai bonus</li>
+                        <li><span class="power-tag" style="background: #2ecc71">Lucky Time</span> - 50% chance for double points</li>
+                        <li><span class="power-tag" style="background: #000">BOMB!</span> - Game Over! Be careful!</li>
+                    </ul>
+                </div>
+                <div class="tutorial-item">
+                    <h3>Shop Items</h3>
+                    <p>Visit the shop to buy permanent upgrades:</p>
+                    <ul>
+                        <li>Auto Clickers - Earn Quai automatically</li>
+                        <li>Special Characters - Change your penguin</li>
+                        <li>Backgrounds - Customize your game</li>
+                    </ul>
+                </div>
+            </div>
+            <button id="startGame" class="start-button">Start Game</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
